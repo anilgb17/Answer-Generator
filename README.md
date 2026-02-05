@@ -78,18 +78,70 @@ A web-based system that accepts questions or question papers as input and produc
 - Docker and Docker Compose
 - Python 3.11+ (for local development)
 - Node.js 20+ (for local development)
+- At least one AI provider API key (Gemini recommended - FREE)
+
+### Quick Setup (Recommended)
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/anilgb17/Answer-Generator.git
+   cd Answer-Generator
+   ```
+
+2. **Setup environment file**
+   ```bash
+   # Run the automated setup script
+   python setup_env.py
+   ```
+   
+   Or manually:
+   ```bash
+   # Windows
+   copy backend\.env.example backend\.env
+   
+   # Linux/Mac
+   cp backend/.env.example backend/.env
+   ```
+
+3. **Add your API keys**
+   
+   Open `backend/.env` and add at least ONE API key:
+   
+   - **Gemini (FREE - Recommended)**: Get from https://makersuite.google.com/app/apikey
+   - **Perplexity (FREE tier)**: Get from https://www.perplexity.ai/settings/api
+   - **OpenAI (PAID)**: Get from https://platform.openai.com/api-keys
+   - **Anthropic (PAID)**: Get from https://console.anthropic.com/
+   
+   Example:
+   ```bash
+   GEMINI_API_KEY=your_api_key_here
+   ```
+
+4. **Start the application**
+   ```bash
+   # Windows
+   start-project.bat
+   
+   # Linux/Mac
+   docker-compose up -d
+   ```
+
+5. **Access the application**
+   - Frontend: http://localhost:3000
+   - Backend API: http://localhost:8000
+   - API Documentation: http://localhost:8000/docs
 
 ### Setup with Docker (Recommended)
 
 1. Clone the repository
-2. Copy environment file:
+2. Run the setup script:
    ```bash
-   copy backend\.env.example backend\.env
+   python setup_env.py
    ```
-3. Edit `backend/.env` and add your API keys
+3. Add your API keys to `backend/.env` (at least one required)
 4. Start all services:
    ```bash
-   docker-compose up
+   docker-compose up -d
    ```
 
 The application will be available at:
