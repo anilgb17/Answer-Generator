@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+  namespace: question-answer-generator
+data:
+  API_HOST: "0.0.0.0"
+  API_PORT: "8000"
+  API_DEBUG: "False"
+  REDIS_HOST: "redis-service"
+  REDIS_PORT: "6379"
+  REDIS_DB: "0"
+  UPLOAD_DIR: "/app/uploads"
+  OUTPUT_DIR: "/app/outputs"
+  VECTOR_DB_PATH: "/app/data/chromadb"
+  PDF_RETENTION_DAYS: "7"
+  LOG_LEVEL: "INFO"
+  LOG_FILE: "/app/logs/app.log"
+  ENFORCE_HTTPS: "True"
+  RATE_LIMIT_ENABLED: "True"
+  CSP_ENABLED: "True"
+  CSP_DIRECTIVES: "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'"
+  MAX_FILE_SIZE_MB: "50"
